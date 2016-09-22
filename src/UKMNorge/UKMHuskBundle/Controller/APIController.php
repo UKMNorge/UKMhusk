@@ -1,35 +1,38 @@
 <?php
 
-namespace UKMNorge\UKMHuskBundle\Controller
+namespace UKMNorge\UKMHuskBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use UKMNorge\UKMHuskBundle\Entity\Person;
 use DateTime;
-use stdClass();
+use stdClass;
 
 use UKMNorge\APIBundle\Util\Access;
 
 class APIController extends Controller
 {
-	public function kommuneListeAction(Request $request, $fylke, $kommune) {
+	public function listeAction(Request $request, $fylke, $kommune) {
 		$response = new stdClass();
 		try {
 			$access = $this->getAccessFromRequest($request);	
 
 			if($access->got('readPhones')) {
-				#$this->get('ukm_husk.person')->
+				$response->success = true;
+				$response->data = $this->get('ukm_husk.person')->getByKommune($fylke, $kommune);
 			}
 			else {
 				$response->success = false;
 				$response->errors = $access->errors();
-				$response->errors[] = 'UKMHuskBundle:APIController: Du har ikke tilgang til å hente ut kommunelister! Det krever "readPhones"-tilgangen.';
+				$response->errors[] = 'UKMHuskBundle:APIController: Du har ikke tilgang til å hente ut kommunelister! Det krever "readPhones"-tilgangen.';
 			}
+			return new JsonResponse($response);
 		}
 		catch (Exception $e) {
 			$response->success = false;
-			$response->errors[] = 'UKMHuskBundle:APIController: Det oppsto en feil med feilmeldingen "'.$e->getMessage().'"';
+			$response->errors[] = 'UKMHuskBundle:APIController: Det oppsto en feil med feilmeldingen "'.$e->getMessage().'"';
 		}
 	}
 	
