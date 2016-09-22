@@ -1,6 +1,6 @@
 ukm_husk_homepage:
     path: /
-    defaults: { _controller: UKMHuskBundle:Default:input, kommune:0 }
+    defaults: { _controller: UKMHuskBundle:Default:input, kommune:0, fylke:0 }
     
 ukm_husk_kommune:
     path:     /f-{fylke}/k-{kommune}/

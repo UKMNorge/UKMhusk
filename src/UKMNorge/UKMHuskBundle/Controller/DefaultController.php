@@ -10,6 +10,9 @@ use DateTime;
 
 class DefaultController extends Controller
 {
+	public function fakeAction() {
+		return $this->redirectToRoute('ukm_husk_kommune', array('fylke'=>0, 'kommune'=>0));
+	}
     public function inputAction( $fylke, $kommune )
     {
 	    $data = [];
