@@ -1,0 +1,16 @@
+{% extends "UKMHuskBundle::layout.html.twig" %}
+
+{% block content %}
+	<h1 class="display-3">Husk UKM</h1>
+	{% embed "UKMHuskBundle::flashMessages.html.twig" %}{% endembed %}
+	<p class="lead">Skriv inn mobilnummeret ditt, så sender vi en gratis SMS når påmeldingen åpner</p>
+	<form action="{{ url('ukm_husk_do', {'fylke': fylke, 'kommune': kommune}) }}" method="POST">
+		<input type="tel" name="mobil" class="form-control form-control-lg" />
+	
+		<p>&nbsp;</p>
+		<p class="lead pull-xs-right">
+			<button type="submit" class="btn btn-primary btn-lg">Ja takk, send en gratis sms</button>
+		</p>
+	</form>
+
+{% endblock %}

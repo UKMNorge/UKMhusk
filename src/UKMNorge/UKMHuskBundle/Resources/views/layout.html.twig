@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Husk UKM</title>
+		{% block javascripts %}
+		    {% javascripts '@UKMHuskBundle/Resources/public/js/jquery-2.2.4.min.js'
+			    		   '@UKMHuskBundle/Resources/public/js/jquery-ui.min.js'
+			    		   '@UKMHuskBundle/Resources/public/js/flashmessage.js'
+			    		    %}
+		        <script src="{{ asset_url }}"></script>
+		    {% endjavascripts %}
+		{% endblock %}
+		{% block stylesheets %}
+		    {% stylesheets '@UKMHuskBundle/Resources/public/css/*' filter='cssrewrite' %}
+		        <link rel="stylesheet" href="{{ asset_url }}" />
+		    {% endstylesheets %}
+		{% endblock %}
+	
+		<script language="javascript" type="text/javascript">
+			/* HOLD APPEN SOM APP */
+			$("a").click(function (event) {
+				event.preventDefault();
+				window.location = $(this).attr("href");
+			});
+			$(document).on('click', 'a', function(event){
+				event.preventDefault();
+				window.location = $(this).attr('href');
+			});
+		</script>
+		
+		<style>
+		html {
+			background: url('{% image '@UKMHuskBundle/Resources/public/img/background-xs.jpg' %}{{ asset_url }}{% endimage %}') no-repeat center center fixed; 
+		}
+		@media (min-width: 1025px) {
+			html {
+				background: url('{% image '@UKMHuskBundle/Resources/public/img/background-lg.jpg' %}{{ asset_url }}{% endimage %}') no-repeat center center fixed; 
+			}
+		}
+		</style>
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	</head>
+	<body>
+		<div class="floatCenter">
+			<div class="jumbotron">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>
+{% block post_extra_javascript %}{% endblock %}

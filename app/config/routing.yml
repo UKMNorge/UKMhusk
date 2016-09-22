@@ -1,0 +1,7 @@
+ukm_husk:
+    resource: "@UKMHuskBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

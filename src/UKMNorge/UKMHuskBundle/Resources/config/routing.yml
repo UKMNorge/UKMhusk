@@ -1,0 +1,12 @@
+ukm_husk_homepage:
+    path: /
+    defaults: { _controller: UKMHuskBundle:Default:input, kommune:0 }
+    
+ukm_husk_kommune:
+    path:     /f-{fylke}/k-{kommune}/
+    defaults: { _controller: UKMHuskBundle:Default:input, kommune:0 }
+    methods: [GET]
+
+ukm_husk_do:
+    path: /f-{fylke}/k-{kommune}/
+    defaults: { _controller: UKMHuskBundle:Default:save, kommune:0 }
