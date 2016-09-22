@@ -186,4 +186,8 @@ class Person
     {
         return $this->fylke;
     }
+    
+	public function expose() {
+       return get_object_vars($this);
+   }
 }

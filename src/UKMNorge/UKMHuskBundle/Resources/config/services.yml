@@ -2,3 +2,6 @@ services:
 #    ukm_husk.example:
 #        class: UKMNorge\UKMHuskBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
+    ukm_husk.person:
+        class: UKMNorge\UKMHuskBundle\Services\PersonService
+        arguments: ["@doctrine"]
