@@ -1,4 +1,6 @@
-html {
+body {
+	background-position: center center;
+	background-repeat: no-repeat;
 	height: 100vh;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -9,6 +11,7 @@ html {
 .floatCenter {
 	max-width: 50vw;
 	max-height: 50vh;
+	min-width: 450px !important;
 	position: absolute;
 	top:0;
 	bottom: 0;
@@ -24,3 +27,4 @@ html {
 	background: white;
 	background: rgba(255, 255, 255, 0.9);
 }
+

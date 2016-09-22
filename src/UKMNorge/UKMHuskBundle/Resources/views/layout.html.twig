@@ -30,12 +30,12 @@
 		</script>
 		
 		<style>
-		html {
-			background: url('{% image '@UKMHuskBundle/Resources/public/img/background-xs.jpg' %}{{ asset_url }}{% endimage %}') no-repeat center center fixed; 
+		body {
+			background-image: url('{% image '@UKMHuskBundle/Resources/public/img/background-xs.jpg' %}{{ asset_url }}{% endimage %}'); 
 		}
 		@media (min-width: 1025px) {
-			html {
-				background: url('{% image '@UKMHuskBundle/Resources/public/img/background-lg.jpg' %}{{ asset_url }}{% endimage %}') no-repeat center center fixed; 
+			body {
+				background-image: url('{% image '@UKMHuskBundle/Resources/public/img/background-lg.jpg' %}{{ asset_url }}{% endimage %}'); 
 			}
 		}
 		</style>
