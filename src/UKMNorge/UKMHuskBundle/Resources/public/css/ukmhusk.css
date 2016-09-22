@@ -11,7 +11,7 @@ body {
 .floatCenter {
 	max-width: 50vw;
 	max-height: 50vh;
-	min-width: 450px !important;
+	min-width: 400px !important;
 	position: absolute;
 	top:0;
 	bottom: 0;
