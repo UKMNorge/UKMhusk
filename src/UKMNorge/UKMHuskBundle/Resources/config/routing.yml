@@ -10,3 +10,7 @@ ukm_husk_kommune:
 ukm_husk_do:
     path: /f-{fylke}/k-{kommune}/
     defaults: { _controller: UKMHuskBundle:Default:save, kommune:0 }
+
+ukm_husk_kommune_api:
+    path: /api/f-{fylke}/k-{kommune}/
+    defaults: { _controller: UKMHuskBundle:API:kommuneListe }
