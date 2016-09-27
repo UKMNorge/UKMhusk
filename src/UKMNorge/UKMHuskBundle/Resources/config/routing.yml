@@ -6,6 +6,11 @@ ukm_husk_kommune:
     path:     /f-{fylke}/k-{kommune}/
     defaults: { _controller: UKMHuskBundle:Default:input, kommune:0 }
     methods: [GET]
+    
+ukm_husk_fylke:
+    path:     /f-{fylke}/
+    defaults: { _controller: UKMHuskBundle:Default:input, kommune:0 }
+    methods: [GET]
 
 ukm_husk_do:
     path: /f-{fylke}/k-{kommune}/
