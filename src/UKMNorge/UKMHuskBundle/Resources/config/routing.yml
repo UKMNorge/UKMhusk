@@ -14,3 +14,7 @@ ukm_husk_do:
 ukm_husk_kommune_api:
     path: /api/f-{fylke}/k-{kommune}/
     defaults: { _controller: UKMHuskBundle:API:liste }
+    
+ukm_husk_nordtrondelag:
+    path: /nord-trondelag/
+    defaults: { _controller:UKMHuskBundle:Default:input, kommune:0, fylke:17 }
