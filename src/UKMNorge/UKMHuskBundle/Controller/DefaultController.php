@@ -8,6 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 use UKMNorge\UKMHuskBundle\Entity\Person;
 use DateTime;
 use Exception;
+use fylker;
+
+require_once('UKM/fylker.class.php');
 
 class DefaultController extends Controller
 {
@@ -15,7 +18,12 @@ class DefaultController extends Controller
     {
 	    $data = [];
 	    $data['kommune'] = $kommune;
-	    $data['fylke'] = $fylke;
+	    if(is_numeric($fylke))
+	    	$data['fylke'] = $fylke;
+	    else {
+	    	$fylke = fylker::getByLink($fylke);
+	    	$data['fylke'] = $fylke->getId();
+	    }
 	    
         return $this->render('UKMHuskBundle:Default:input.html.twig', $data);
     }

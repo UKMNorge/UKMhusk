@@ -23,3 +23,8 @@ ukm_husk_kommune_api:
 ukm_husk_nordtrondelag:
     path: /nord-trondelag/
     defaults: { _controller:UKMHuskBundle:Default:input, kommune:0, fylke:17 }
+
+ukm_husk_fylke_nicename:
+    path: /{fylke}/
+    defaults: { _controller: UKMHuskBundle:Default:input, kommune:0 }
+    methods: [GET]
