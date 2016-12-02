@@ -27,6 +27,9 @@ framework:
     session:
         # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id:  ~
+        # Fix IE-session-bug.
+        cookie_domain: "husk.%UKM_HOSTNAME%"
+        name: "SFhusk"
     fragments:       ~
     http_method_override: true
     assets: ~
