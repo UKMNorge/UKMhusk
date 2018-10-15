@@ -37,12 +37,12 @@ class AppKernel extends Kernel
 
     public function getCacheDir()
     {
-        return sys_get_temp_dir().'/ukmhusk/var/cache/'.$this->getEnvironment();
+        return $_ENV['HOME'].'/cache/symfony/ukmhusk/'.$this->getEnvironment();
     }
 
     public function getLogDir()
     {
-        return sys_get_temp_dir().'/ukmhusk/var/logs';
+        return $_ENV['HOME'].'/logs/symfony/ukmhusk/'.$this->getEnvironment();
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)
