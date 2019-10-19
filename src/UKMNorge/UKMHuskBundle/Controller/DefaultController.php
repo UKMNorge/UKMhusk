@@ -30,7 +30,7 @@ class DefaultController extends Controller
 
     public function saveAction( Request $request, $fylke, $kommune )
     {
-	    $session = new Session();	    
+	    $session = $request->getSession();
 
 	    $data = [];
 	    $data['kommune'] = $kommune;
